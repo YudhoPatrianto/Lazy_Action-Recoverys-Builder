@@ -104,8 +104,8 @@ jobs:
       run: |
         mkdir android-recovery
         cd android-recovery
-        git config --global user.name "lazycodebuilder"
-        git config --global user.email "154446636+lazycodebuilder@users.noreply.github.com"
+        git config --global user.name "YudhoPatrianto"
+        git config --global user.email "kydh01123@gmail.com"
         repo init --depth=1 -u https://github.com/PitchBlackRecoveryProject/manifest_pb.git -b ${{ inputs.MANIFEST_BRANCH }}
 
     - name: Repo Sync
@@ -162,7 +162,7 @@ jobs:
         cd android-recovery
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
-        lunch ${{ env.DEVICE_MAKEFILE }}-eng && mka ${{ inputs.BUILD_TARGET }}
+        lunch pb-${{ env.DEVICE_MAKEFILE }}-eng && mka pbrp
 
     - name: Check Build Makefile
       run: |
