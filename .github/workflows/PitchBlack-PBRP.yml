@@ -131,7 +131,7 @@ jobs:
         for file in *.mk; do
             # Extract variables using sed
             makefile=$(sed -n 's/^[[:space:]]*PRODUCT_NAME[[:space:]]*:=\s*\(.*\)/\1/p' "$file")
-            brand=$(sed -n 's/^[[:space:]]*PRODUCT_BRAND[[:space:]]*:=\s*\(.*\)/\1/p' "$file")
+            brand="xiaomi"
             codename=$(sed -n 's/^[[:space:]]*PRODUCT_DEVICE[[:space:]]*:=\s*\(.*\)/\1/p' "$file")
             if [[ -n "$makefile" && -n "$brand" && -n "$codename" ]]; then
                 DEVICE_MAKEFILE="$makefile"
